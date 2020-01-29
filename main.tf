@@ -30,7 +30,7 @@ module "codepipeline_assume_role_label" {
 
 resource "aws_iam_role" "default" {
   count              = var.enabled ? 1 : 0
-  name               = module.codepipeline_assume_role_label.id
+  name               = module.codepipeline_assume_role_label.name
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
